@@ -3,10 +3,9 @@ import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
 
-
 var handleVideoSearch = (q) => {
- 
   //TODO:  Write an asynchronous action to handle a video search!
+  return () => (searchYouTube({key: YOUTUBE_API_KEY, query: q}, (data) => (changeVideo(data[0]), changeVideoList(data))));
 };
-
+// searchYouTube({YOUTUBE_API_KEY, q, max: 5}, dispatch())
 export default handleVideoSearch;
